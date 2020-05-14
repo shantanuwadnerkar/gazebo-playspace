@@ -39,5 +39,5 @@ catkin_package(
 	# LIBRARIES simple_arm
 )
 
-# add_library(hello_world_plugin src/hello_world_plugin.cpp)
-# target_link_libraries(hello_world_plugin ${catkin_LIBRARIES} ${gazebo_LIBRARIES})
+add_library(hello_world_plugin src/hello_world_plugin.cpp)
+target_link_libraries(hello_world_plugin ${catkin_LIBRARIES} ${gazebo_LIBRARIES})

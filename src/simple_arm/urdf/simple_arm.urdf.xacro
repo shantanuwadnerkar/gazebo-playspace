@@ -221,7 +221,7 @@
   </joint>
 
   <!--Transmission and actuators-->
-  <!-- <transmission name="tran1">
+  <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint_1">
       <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
@@ -241,5 +241,5 @@
       <hardwareInterface>EffortJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
-  </transmission> -->
+  </transmission>
 </robot>

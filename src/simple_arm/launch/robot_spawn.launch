@@ -1,5 +1,7 @@
 <launch>
     <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find simple_arm)/urdf/simple_arm.urdf.xacro'"/>
+    
+    <!-- add controller and joint, robot state publishers -->
 
     <!--Launch a gazebo world-->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">

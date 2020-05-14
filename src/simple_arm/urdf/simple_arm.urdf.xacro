@@ -16,7 +16,7 @@
   <xacro:property name="camera_size" value="0.05" />
 
   <!--Import gazebo elements-->
-  <!-- <xacro:include filename="$(find simple_arm)/urdf/simple_arm.gazebo.xacro" /> -->
+  <xacro:include filename="$(find simple_arm)/urdf/simple_arm.gazebo.xacro" />
 
   <!--Links-->
   <link name="world"/>

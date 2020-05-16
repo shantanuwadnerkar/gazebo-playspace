@@ -241,6 +241,10 @@
 
     <!-- gazebo plugin here -->
     <plugin name="hello_world_plugin" filename="libhello_world_plugin.so"/>
+    <plugin name="spawn_sphere_plugin" filename="libspawn_sphere_plugin.so">
+      <init_pos>0.2 -0.0 1.0</init_pos>
+      <nr_spheres>40</nr_spheres>
+    </plugin>
 
 
 

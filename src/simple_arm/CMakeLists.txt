@@ -3,6 +3,8 @@ project(simple_arm)
 
 ## Add support for C++11, supported in ROS Kinetic and newer
 add_definitions(-std=c++11)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
+set(CMAKE_CXX_FLAGS "-std=c++11")
 
 # Check for c++11 / c++0x support
 # include(CheckCXXCompilerFlag)
@@ -22,6 +24,7 @@ add_definitions(-std=c++11)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
 	roscpp
+	rospy
 	gazebo_ros
 	# std_msgs
 	# message_generation
@@ -34,10 +37,13 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 include_directories(${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
 
 catkin_package(
-	DEPENDS roscpp gazebo_ros
+	DEPENDS roscpp rospy gazebo_ros
 	# INCLUDE_DIRS include
 	# LIBRARIES simple_arm
 )
 
-add_library(hello_world_plugin src/hello_world_plugin.cpp)
-target_link_libraries(hello_world_plugin ${catkin_LIBRARIES} ${gazebo_LIBRARIES})
+add_library(hello_world_plugin plugins/hello_world_plugin.cpp)
+target_link_libraries(hello_world_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
+
+add_library(spawn_sphere_plugin SHARED plugins/spawn_sphere_plugin.cpp)
+target_link_libraries(hello_world_plugin ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
